@@ -21,7 +21,6 @@
     #include <sys/socket.h>
 #else
     #include <ws2tcpip.h>
-    #include "win_service.h"
     #define close(fd) closesocket(fd)
 #endif
 
@@ -407,9 +406,6 @@ int main(int argc, char **argv)
     if (WSAStartup(MAKEWORD(2, 2), &wsa)) {
         uniperror("WSAStartup");
         return -1;
-    }
-    if (register_winsvc(argc, argv)) {
-        return 0;
     }
     #endif
     int optc = sizeof(options)/sizeof(*options);

@@ -3,3 +3,9 @@ ciadpi.exe
 ciadpi
 *.o
 compile_flags.txt
+
+# QtCreator settings file
+CMakeLists.txt.user
+
+# Build directories
+build-*/
